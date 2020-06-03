@@ -37,7 +37,11 @@ function hideSubheading() {
     }
 }
 
-
+setSubheadingText();
+function setSubheadingText() {
+    let out = "More often than not, I find that my mood affects the music I choose to listen to. So I thought it would be interesting to take a look, seeing what my music choice says about my current state. Here are the top " + names.length + " songs I've listened to in the past month, ranked by various features of the 'Happines Scale.'"
+    document.querySelector(`.subheadingtext`).innerHTML =  out;
+}
 
 // //Most/Least Played Labels
 
