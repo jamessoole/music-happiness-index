@@ -4,6 +4,7 @@
 /* darkest green:  1a7266*/
 /* navy: #222831 */
 /* white: #ccc */
+/* white brighter: f8f7f7 */
 /* grey: #bbbbbb */
 
 /* https://colorhunt.co/palette/14832 */
@@ -16,7 +17,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    color: #ccc;
+    color: #f8f7f7;
 }
 body {
     background: #222831;
@@ -26,7 +27,7 @@ body {
 
 .home {
     top: 20px;
-    right: 33px;
+    right: 55px;
     width: 55px;
     position: absolute;
     border: 2px solid transparent;
@@ -50,7 +51,6 @@ body {
     left: 20px;
     font-size: 60px;
     line-height: 0.65em;
-    /* opacity: 80%; */
     transition: 1s ease-in-out;
 }
 .what {
@@ -101,26 +101,31 @@ body {
     /* mix-blend-mode: exclusion; */
     /* text-shadow: 0 0 5px #000; */
 }
+.subheadingtext {
+    color: #bbbbbb;
+    transition: 0.2s ease-in-out;
+    line-height: 1.1em;
+}
 
 
 #dropdown {
     /* border: solid pink; */
-    /* position: absolute; */
     position: relative;
-    /* bottom: 210px; */
-    /* top: 240px; */
     margin-top: 5px;
-    /* left: 30px; */
     width: 200px;
+
 }
 #dropdown label {
     display:block;
     padding-bottom: 5px;
     font-weight: bold;
     font-size: 1.2em;
+    color: #f8f7f7;
+    letter-spacing: 0.3em;
 }
 #dropdown select{
     border: solid #eeeeee;
+    border-radius: 5px;
     /* width: 200px; */
     background: #222831;
     opacity: 80%;
@@ -180,43 +185,48 @@ body {
     transition: 0.1s ease-in;
 }
 .most-played {
-    right: 563px;
+    right: 50%;
 }
 .least-played {
-    right: 60px;
+    right: 5%;
 }
 
 
 /* contains bars */
 .data-container {
-    /* border: solid green; */
     position: absolute;
     /* justify-content: space-evenly; */
     justify-content: flex-end;
     align-items: flex-end;
     display: flex;
     flex-wrap: nowrap;
-    padding: 10px;
-    width: 600px;
-    height: 400px;
-    right: 50px;
-    bottom: 10px;
+    padding: 0;
+    width: 50%;
+    /* height: 400px; */
+    height: 25vw;
+    /* right: 80px; */
+    right: 5%;
+    bottom: 30px;
 }
+
+
+
 
 .bar {
     position: relative;
     background: #30e3ca;
     background: linear-gradient(45deg, #229788, #30e3ca);
-    width: 30px;
+    width: 100%;
     height: 90%;
     border-radius: 0px;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     /* margin: 10px 10px; */
     /* margin: 0.1em; */
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     transition: 0.5s ease-in-out;
     cursor: pointer;
+    margin: 0;
 }
 
 /* individual bars edited in js file */
@@ -225,8 +235,8 @@ body {
 .axis {
     position: absolute;
     width: 10px;
-    height: 375px;
-    right: 35px;
+    height: 25vw;
+    right: 2%;
     bottom: 30px;
     /* border: solid hotpink; */
     background: #eeeeee;
@@ -239,18 +249,17 @@ body {
 
 
 /* to left of all bars */
-#description {
-    width: 600px;
-    /* height: 6em; */
-    /* border: solid #eeeeee; */
-    position: absolute;
-    bottom: 30px;
-    right: 650px;
-    /* opacity: 50%; */
+#description {    
     opacity: 0;
     text-align: right; 
     font-size: 1.3em;   
     transition: 0.2s ease-in-out;
+    z-index: 2;
+
+    position: absolute;
+    bottom: 0;
+    left: -82%;
+    width: 80%;
 }
 .name {
     font-weight: bold;
@@ -270,9 +279,10 @@ body {
 /* cover art */
 .art {
     position: absolute;
-    width: 580px;
-    right: 60px;
-    bottom: 30px;
+    bottom: 0;
+    right: 0;
+    /* width: 524px; */
+    width: 100%;
     /* bottom: 0px; */
     /* mix-blend-mode:hard-light; */
     mix-blend-mode: difference;
@@ -281,17 +291,30 @@ body {
     /* allows to click underneath image, not supported by IE10 */
     pointer-events: none;
     transition: 0.3s ease-in-out;
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
 }
 
 /* play audio button */
 #audio {
     transform: rotate(-90deg);
     position: absolute;
-    right: 600px;
-    top: 40px;
-    width: 85px;
-    /* width: 30px; */
-    font-size: 40em;
+    top: -85%;
+    left: -50px;
+    z-index: 2;
+
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+
+    /* right: 600px;
+    top: 40px; */
+    width: 100px;
+    height: 40px;
+    /* width: 150px; */
+    /* font-size: 40em; */
     display: block;
     mix-blend-mode: difference;
     transition: 0.3s ease-in-out;
@@ -304,8 +327,44 @@ body {
 }
 @keyframes hide {
     /* doesnt really help */
-    0% {transform:translateY(-100%) scale(0)}
+    0% {transform:translateY(+100%) scale(0)}
     100% {transform:translate(0) scale(0)}
 }
 
 
+
+
+
+
+
+@media screen and (max-width: 600px) {
+    .data-container {
+        /* display: flex;
+        align-content: center;
+        align-items: flex-end; */
+        width: 90%;
+        bottom: 15px;
+    }
+    .axis {
+        visibility: hidden;
+    }
+    #description {
+        visibility: hidden;
+    }
+    .most-played, .least-played {
+        visibility: hidden;
+    }
+    #feature-description {
+        width: 100%;
+        text-align: justify;
+    }
+    #audio {
+        /* align-items: flex-end; */
+        left: 70%;
+        top: -230%;
+    }
+    #audio {
+        top: -300%;
+        left: 75%;
+    }
+}

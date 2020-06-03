@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Mood</title>
+    <title>The Happiness Index</title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel = "stylesheet" href="music-mood.css">
 </head>
@@ -21,7 +21,8 @@
         <div class="to">To</div>
     </div>
 
-    <div class="subheading">More often than not, I find that my mood affects the music I choose to listen to. So I thought it would be interesting to take a look, seeing what my music choice says about my current state. Here are the top 50 songs I've listened to in the past month, ranked by various features of the 'Happines Scale.'
+    <div class="subheading">
+        <div class="subheadingtext">More often than not, I find that my mood affects the music I choose to listen to. So I thought it would be interesting to take a look, seeing what my music choice says about my current state. Here are the top 50 songs I've listened to in the past month, ranked by various features of the 'Happines Scale.'</div>
         <div id="dropdown">
             <label >Feature</label>
             <select id="options" onmouseover="featureDescription()" onmouseout="featureDescriptionOff()">
@@ -36,13 +37,25 @@
         <div id="feature-description">HEY</div>
     </div>
 
+    
+
     <div class="most-played">Most Played</div>
     <div class="least-played">Least Played</div>
 
 
     <!-- all 50 bars -->
+    <!-- also contains description,art, and audio -->
     <div class="data-container">
-        <!-- <span class="tooltiptext">text</span> -->
+
+        <img class="art">
+        <audio id="audio" controls></audio>
+
+        <!-- description text box for artist and song name-->
+        <div id="description">
+            <p class="artist"></p>
+            <p class="name"></p>
+        </div>
+
 
         <div class="bar bar0" onmouseover="showDescription(0); mostPlayed()" onmouseout="hideDescription(0); hideMostPlayed()" onclick="art(0)"><span class="tooltiptext tooltiptext0"></span></div>
         <div class="bar bar1" onmouseover="showDescription(1); mostPlayed()" onmouseout="hideDescription(1); hideMostPlayed()" onclick="art(1)"><span class="tooltiptext tooltiptext1"></span></div>
@@ -96,18 +109,6 @@
         <div class="bar bar49" onmouseover="showDescription(49); leastPlayed()" onmouseout="hideDescription(49); hideLeastPlayed()" onclick="art(49)"><span class="tooltiptext tooltiptext49"></span></div>
     </div>
 
-    <!-- description text box for artist and song name-->
-    <div id="description">
-        <p class="artist"></p>
-        <p class="name"></p>
-    </div>
-    
-
-    <!-- audio clip -->
-    <audio id="audio" controls ></audio>
-
-    <!-- track art -->
-    <img class="art">
 
     <!-- vertical legend next to bars -->
     <div class="axis"></div>
@@ -124,7 +125,8 @@
 
 
 <!-- TODO -->
-<!-- responsizeness -->
 <!-- diff number of songs -->
 <!-- scrrenshot image -->
 <!-- embed or set up site -->
+<!-- Issue - audioplay button when zooming out -->
+<!-- could make larger bu tlose aesthetic appeal -->

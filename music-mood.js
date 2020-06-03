@@ -21,6 +21,21 @@
 
 
 
+// query hide paragraph and shift features up
+$('html').click(function(e) {                    
+    hideSubheading();             
+
+});
+function hideSubheading() {
+    console.log($( window ).width());
+    if ($( window ).width() < 600) {
+        document.querySelector(`.subheadingtext`).style["line-height"] = "0em";
+        document.querySelector(`.subheadingtext`).style.opacity = 0;
+    } else {
+        document.querySelector(`.subheadingtext`).style["line-height"] = "1.1em";
+        document.querySelector(`.subheadingtext`).style.opacity = 1;
+    }
+}
 
 
 
@@ -265,14 +280,14 @@ function art(i) {
             removeAudio();
         } else {
             document.querySelector('.art').style.opacity = 1;
-            document.querySelector('#audio').style.transform = "scale(0.7)";
+            document.querySelector('#audio').style.transform = "scale(0.8)";
         }
         
     } else {
         document.querySelector('.art').src = arturl;
         document.querySelector('.art').style.opacity = 1;
         document.querySelector('#audio').src = previewurl;
-        document.querySelector('#audio').style.transform = "scale(0.7)";
+        document.querySelector('#audio').style.transform = "scale(0.8)";
     }
 }
 
