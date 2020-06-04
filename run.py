@@ -25,12 +25,14 @@ def run():
     client = SpotifyClient(os.getenv('token'))
     print(f"token is: {os.getenv('token')}")
 
-    # choose artists or tracks
-    choice = input("Return top 'artists' or 'tracks'?  ")
-    if not (choice == 'artists' or choice== 'tracks'):
-        print("Term not recognized. Default: tracks.")
-        choice = 'tracks'
+    # # choose artists or tracks
+    # choice = input("Return top 'artists' or 'tracks'?  ")
+    # if not (choice == 'artists' or choice== 'tracks'):
+    #     print("Term not recognized. Default: tracks.")
+    #     choice = 'tracks'
 
+    choice = 'tracks'
+    
     if choice == 'tracks':
         want_analysis = input("Print audio analysis (y,n)?  ")
         tracks = client.get_top_tracks()
@@ -76,7 +78,10 @@ def run():
             # track artwork and preview
             track = client.get_track(track["id"])
             artworks += ("\"" + track['album']['images'][0]['url'] + "\"" + ', ')
-            previews += ("\"" + track['preview_url'] + "\"" + ', ')
+            if (track['preview_url'] == None):
+                previews += ("\"" + " " + "\"" + ', ')
+            else:
+                previews += ("\"" + track['preview_url'] + "\"" + ', ')
 
 
 
@@ -129,19 +134,19 @@ def run():
 
 
 
-    if choice == 'artists':
-        want_details = input("Include audio analysis (y,n)?  ")
-        artists = client.get_top_artists()
-        print()
-        print('The following are your top artists, starting with the most played')
-        print()
-        for artist in artists:
-            print(f"{artist['name']} ")
-            if (want_details == 'y'):
-                details = client.get_artist_details(artist["id"])
-                print(f"main genre: {details['genres'][0]}")
-                print(f"popularity: {details['popularity']}")
-                print()
+    # if choice == 'artists':
+    #     want_details = input("Include audio analysis (y,n)?  ")
+    #     artists = client.get_top_artists()
+    #     print()
+    #     print('The following are your top artists, starting with the most played')
+    #     print()
+    #     for artist in artists:
+    #         print(f"{artist['name']} ")
+    #         if (want_details == 'y'):
+    #             details = client.get_artist_details(artist["id"])
+    #             print(f"main genre: {details['genres'][0]}")
+    #             print(f"popularity: {details['popularity']}")
+    #             print()
 
 
     # # testing
