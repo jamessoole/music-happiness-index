@@ -1,5 +1,6 @@
 # Music Happiness Index
-## Visualize values on the 'Happiness Scale' for my most-played songs based on audio features from Spotify API.
+
+### Visualize values on the 'Happiness Scale' for my most-played songs based on audio features pulled from Spotify API.
 
 Currently hosted [Here](https://jamessoole.github.io).
 
