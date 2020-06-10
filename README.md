@@ -4,7 +4,7 @@
 
 Currently hosted [Here](https://jamessoole.github.io).
 
-![alt text](https://github.com/jamessoole/music-happiness-index/blob/master/preview-image.JPG?raw=true)
+![alt text](https://github.com/jamessoole/music-happiness-index/blob/master/preview-image-both.png?raw=true)
 
 
 Python script `run.py` calls `client.py`, writing data to `track-data.js`
