@@ -20,6 +20,27 @@
 
 
 
+//choose which term data to load
+// window.onload = function() {
+    // chooseTerm();
+// };
+// function chooseTerm() {
+    // document.querySelector('.dataSource').src = 'track-data-long_term.js';
+    // console.log('here');
+    // if (document.querySelector('.dataSource').src =='track-data-long_term.js') {
+    //     localStorage.setItem('storedNames', JSON.stringify(longNames));
+    //     localStorage.setItem('storedArtists', JSON.stringify(longArtists));
+        // var myObject = JSON.parse(localStorage.getItem('myObject'));
+    // }
+    // //Reloads Page
+    // location.reload();
+    // console.log(names);
+// var storedNames = JSON.parse(localStorage.getItem('storedNames'));
+// var storedArtists = JSON.parse(localStorage.getItem('storedArtists'));
+
+
+
+
 
 // query hide paragraph and shift features up
 $('html').click(function(e) {                    
@@ -248,6 +269,10 @@ function description(i) {
         out = tempos[i] + " BPM";
     }
     return [names[i], artists[i], out];
+    //attempt at changing term-time
+    // return [storedNames[i], storedArtists[i], out];
+
+
 }
 
 
