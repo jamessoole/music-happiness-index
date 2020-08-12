@@ -2,7 +2,7 @@
 
 ### Visualize values on the 'Happiness Scale' for my most-played songs based on audio features pulled from Spotify API.
 
-Currently hosted [Here](https://jamessoole.github.io).
+Currently hosted [Here](https://jamessoole.github.io/music-happiness-index/index.html).
 
 ![alt text](https://github.com/jamessoole/music-happiness-index/blob/master/preview-image-both.png?raw=true)
 
